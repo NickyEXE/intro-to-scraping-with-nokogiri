@@ -16,3 +16,6 @@
 - A Ruby Gem that allows us to parse and read HTML in Ruby
 - Nokogiri provides tools for using Ruby to grab an element or set of elements by its CSS Selector.
 - - calling `.css(".card")` on a Nokogiri element will give you all child HTML elements with "card" as one of their classes.
+
+### TTY-Prompt
+- A gem that provides menus and additional interactivity for the CLI with Ruby

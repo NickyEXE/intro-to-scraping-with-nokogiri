@@ -2,9 +2,13 @@ require 'open-uri'
 require 'nokogiri'
 require 'pry'
 
-require_relative 'models/scraper.rb'
-require_relative 'models/product.rb'
+require_relative("./models/product.rb")
+require_relative("./models/cli.rb")
 
-Scraper.new.cards.each{|card| Product.initialize_from_nokogiri(card)}
+url = URI.parse("https://hanson.net/store")
+response = Net::HTTP.get(url)
+noko = Nokogiri::HTML(response)
+cards = noko.css(".card").each{|card| Product.new(card)}
 
-binding.pry
+# binding.pry
+CLI.new
